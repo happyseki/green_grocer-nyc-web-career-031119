@@ -41,8 +41,8 @@ end
 
 def checkout(cart, coupons)
   total = 0
-  cart = consolidate_cart(cart)
-  cart = apply_coupons(cart, coupons)
+  consolidated_cart = consolidate_cart(cart)
+  cart = apply_coupons(consolidated_cart, coupons)
   cart = apply_clearance(cart)
   cart.each do|green, info_hash|
   total += info_hash[:price] * info_hash[:count]
